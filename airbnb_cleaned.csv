@@ -1,0 +1,498 @@
+City,Room Type,Price,Guests,Rating,lat,lng
+"Manali, India",Hotel/Other,8946,3,4.650204081632653,32.2233,77.18228
+"Manali, India",Hotel/Other,9124,9,4.650204081632653,32.22352,77.18152
+"Goa, India",Private Room,9900,4,4.0,15.504,73.866
+"Bhuntar, India",Shared Room,8684,1,4.650204081632653,31.88656,77.14467
+"Bhuntar, India",Hotel/Other,4274,3,4.650204081632653,32.01248,77.29114
+"Bhuntar, India",Hotel/Other,4274,2,4.650204081632653,32.01204,77.2909
+"Gurugram, India",Hotel/Other,1734,16,4.650204081632653,28.36673,77.00647
+"Ganaheda, India",Hotel/Other,1804,12,4.650204081632653,26.49372,74.5383
+"Banjar, India",Hotel/Other,2822,3,4.650204081632653,31.63839,77.34503
+"Morjim, India",Entire Place,902,12,4.650204081632653,15.62707,73.7327
+"Gurugram, India",Hotel/Other,1443,16,4.650204081632653,28.35517,77.00426
+"Awas, India",Entire Place,912,15,4.650204081632653,18.76514,72.87878
+"Bengaluru, India",Private Room,882,16,4.650204081632653,13.12752,77.56391
+"Sangolda, India",Entire Place,1374,16,4.650204081632653,15.54799,73.81177
+"Rishikesh, India",Entire Place,788,8,4.650204081632653,30.13704,78.30683
+"Parra, India",Entire Place,978,16,4.650204081632653,15.57329,73.7767
+"New Delhi, India",Hotel/Other,962,16,4.650204081632653,28.496,77.166
+"Aru, India",Entire Place,782,10,4.650204081632653,34.09091,75.26407
+"North Goa, India",Entire Place,854,16,4.650204081632653,15.56203,73.78613
+"Mararikulam, India",Entire Place,1443,16,4.650204081632653,9.58429,76.3051
+"Awas, India",Entire Place,1325,16,4.89,18.76034,72.88551
+"Canacona, India",Entire Place,1220,13,4.650204081632653,14.9939,74.0571
+"Nainital, India",Entire Place,842,16,4.650204081632653,29.38514,79.45673
+"Pathau, India",Entire Place,913,8,4.650204081632653,30.1373,78.30656
+"Anjuna, India",Entire Place,1185,10,4.650204081632653,15.58917,73.75996
+"Nathuwakhan, India",Hotel/Other,1118,12,4.650204081632653,29.47118,79.58584
+"Manali, India",Hotel/Other,962,16,4.650204081632653,32.29923,77.17704
+"Loutolim, India",Entire Place,902,14,4.650204081632653,15.33419,73.97759
+"Candolim, India",Entire Place,782,16,4.650204081632653,15.51782,73.76411
+"Karjat, India",Entire Place,962,16,4.650204081632653,18.91863,73.33386
+"Assagao, India",Entire Place,842,8,4.650204081632653,15.59765,73.77297
+"Panna, India",Entire Place,1443,8,4.650204081632653,24.71172,80.17358
+"Nashik, India",Hotel/Other,1082,16,4.650204081632653,20.07376,73.64485
+"Mumbai, India",Hotel/Other,1503,8,4.650204081632653,18.92245,72.83399
+"Kullu, India",Hotel/Other,1203,2,4.650204081632653,32.03766,77.14406
+"Lonavla, India",Private Room,1004,10,4.650204081632653,18.70197,73.45109
+"Lonavla, India",Entire Place,902,12,4.650204081632653,18.77152,73.37963
+"Nerul, India",Entire Place,1203,16,4.650204081632653,15.50637,73.79914
+"SALIGAO, India",Entire Place,782,16,4.650204081632653,15.5554,73.78126
+"Ribandar, India",Shared Room,1203,2,4.2,15.504,73.866
+"Arpora, India",Private Room,1385,8,4.650204081632653,15.54944,73.7637
+"Arpora, India",Private Room,1529,10,4.650204081632653,15.54762,73.76425
+"Guirim, India",Entire Place,902,12,4.650204081632653,15.56865,73.8132
+"New Delhi, India",Hotel/Other,1503,6,4.650204081632653,28.443,77.167
+"Udaipur, India",Entire Place,1263,7,4.650204081632653,24.49092,73.58379
+"Panaji, India",Private Room,1097,2,4.83,15.504,73.866
+"New Delhi, India",Hotel/Other,1203,16,4.650204081632653,28.495,77.136
+"Arpora, India",Entire Place,1172,16,4.650204081632653,15.535,73.767
+"Kumarakom, India",Hotel/Other,788,16,4.650204081632653,9.58518,76.42182
+"Anjuna, India",Entire Place,902,4,4.650204081632653,15.57058,73.7415
+"New Delhi, India",Hotel/Other,962,16,4.650204081632653,28.49204,77.13633
+"Panaji, India",Private Room,1168,15,4.650204081632653,15.49643,73.81885
+"Calangute, India",Entire Place,842,14,4.650204081632653,15.54723,73.76524
+"Assonora, India",Hotel/Other,1022,16,4.650204081632653,15.62133,73.89804
+"New Delhi, India",Hotel/Other,1203,16,4.650204081632653,28.43832,77.18967
+"Gauravaddo, India",Entire Place,888,10,4.33,15.535,73.767
+"Gurugram, India",Hotel/Other,1311,16,4.650204081632653,28.36638,77.00665
+"New Delhi, India",Hotel/Other,1203,16,4.650204081632653,28.44808,77.18313
+"North Goa, India",Entire Place,842,16,4.650204081632653,15.55636,73.78057
+"Goa, India",Entire Place,978,16,5.0,15.535,73.767
+"Abu Road, India",Entire Place,1082,12,4.650204081632653,24.53351,72.79282
+"Panjim, India",Hotel/Other,842,16,4.650204081632653,15.49783,73.83033
+"Colovale, India",Entire Place,962,10,4.6,15.64852,73.81753
+"Kukas, India",Hotel/Other,842,8,4.650204081632653,27.08777,75.88661
+"Nandgaon, India",Entire Place,902,16,4.650204081632653,18.77551,73.4101
+"Candolim, India",Entire Place,1153,16,4.650204081632653,15.51716,73.76421
+"Barashiv, India",Entire Place,1203,16,4.650204081632653,18.48283,72.90424
+"Candolim, India",Entire Place,1143,12,5.0,15.52253,73.76319
+"Candolim, India",Entire Place,798,12,4.8,15.5164,73.76705
+"Mahabaleshwar, India",Entire Place,784,16,4.650204081632653,17.92426,73.73543
+"Ambelim, India",Entire Place,902,16,4.650204081632653,15.17409,73.97429
+"Rishikesh, India",Entire Place,1503,12,4.650204081632653,30.12978,78.3307
+"Delhi, India",Private Room,1924,2,4.650204081632653,28.66944,77.20366
+"Lonavla, India",Entire Place,1481,16,4.650204081632653,18.70196,73.45204
+"Calangute, India",Entire Place,897,12,4.78,15.5351,73.75755
+"Vijayawada, India",Hotel/Other,3041,4,4.650204081632653,16.47665,80.70571
+"Moira, India",Entire Place,962,15,4.650204081632653,15.60049,73.83723
+"Calangute Beach, India",Entire Place,782,16,4.650204081632653,15.54855,73.75427
+"Vijayawada, India",Hotel/Other,3033,2,4.650204081632653,16.47685,80.70631
+"Goa, India",Hotel/Other,880,16,4.94,15.31553,73.91299
+"Chennai, India",Entire Place,893,16,5.0,12.94891,80.26171
+"Sangolda, India",Entire Place,1563,16,4.650204081632653,15.54477,73.80395
+"Lonavala, India",Entire Place,1203,15,4.650204081632653,18.76805,73.41268
+"Calangute, India",Entire Place,3007,8,4.25,15.537,73.768
+"Dehradun, India",Hotel/Other,1581,3,4.650204081632653,30.31502,78.03482
+"Dehradun, India",Hotel/Other,1756,3,4.650204081632653,30.31512,78.03483
+"Vijayawada, India",Hotel/Other,3041,3,4.650204081632653,16.47528,80.70549
+"Vagator, India",Entire Place,998,14,4.64,15.60224,73.78022
+"Nilgiris, India",Entire Place,993,10,4.650204081632653,11.33,76.803
+"Vagator, India",Entire Place,940,10,4.650204081632653,15.59941,73.7575
+"Mandrem, India",Entire Place,902,16,3.83,15.66367,73.71241
+"Mumbai, India",Hotel/Other,1924,10,4.650204081632653,18.92181,72.83607
+"Alibag, India",Entire Place,1804,12,4.650204081632653,18.64594,72.89102
+"Manali, India",Entire Place,1744,12,4.83,32.2409,77.18879
+"Calangute, India",Entire Place,1082,12,4.650204081632653,15.53091,73.76345
+"Ashapura, India",Hotel/Other,2405,2,4.650204081632653,26.29586,74.73548
+"Mahagaon, India",Entire Place,1546,16,4.53,18.697,73.506
+"Kihim, India",Entire Place,1674,16,4.650204081632653,18.73272,72.86783
+"Kalwar, India",Entire Place,1082,16,4.650204081632653,26.98848,75.58298
+"Alibaug, India",Entire Place,842,16,4.0,18.65904,72.87707
+"Ramgarh, India",Hotel/Other,4381,3,4.650204081632653,29.42102,79.54799
+"Janedghat, India",Hotel/Other,4351,3,4.650204081632653,30.99192,77.20999
+"Bujra, India",Private Room,962,16,4.650204081632653,24.561,73.637
+"Ramgarh, India",Hotel/Other,4381,6,4.650204081632653,29.42237,79.54729
+"New Delhi, India",Hotel/Other,4209,16,4.650204081632653,28.49698,77.13752
+"Kolkata, India",Entire Place,6013,4,4.27,22.516,88.351
+"New Delhi, India",Entire Place,4209,6,4.91,28.575,77.232
+"Pune, India",Private Room,4269,2,4.8,18.52454,73.87851
+"Kasol, India",Hotel/Other,4470,3,4.650204081632653,32.00977,77.31291
+"Patna, India",Hotel/Other,4418,3,4.650204081632653,25.59828,85.17635
+"New Delhi, India",Entire Place,4209,16,4.650204081632653,28.4963,77.15165
+"Khoohdi, India",Hotel/Other,4444,4,4.650204081632653,26.61888,70.70844
+"New Delhi, India",Hotel/Other,3608,16,4.650204081632653,28.49611,77.15379
+"Bengaluru, India",Hotel/Other,4209,15,4.650204081632653,13.06573,77.4722
+"Govind Nagar, India",Hotel/Other,5274,3,4.650204081632653,12.03632,92.99161
+"Assagao, India",Entire Place,4209,16,4.650204081632653,15.59992,73.77924
+"Alappuzha, India",Hotel/Other,698,6,4.650204081632653,9.46949,76.38729
+"Mumbai, India",Entire Place,601,8,4.96,19.16242,72.7834
+"Baga, India",Entire Place,661,14,5.0,15.56965,73.75761
+"Dona Paula, India",Entire Place,660,14,4.62,15.45279,73.80111
+"Marna, India",Entire Place,598,16,4.8,15.615,73.78
+"Assagao, India",Entire Place,623,15,4.33,15.59117,73.77654
+"Anjuna, India",Entire Place,771,15,4.88,15.5804,73.75759
+"Jaipur, India",Entire Place,567,16,4.650204081632653,26.925,75.801
+"Lonavala, India",Entire Place,624,15,5.0,18.67386,73.39413
+"Alibag, India",Entire Place,701,15,4.47,18.65748,72.87744
+"Manali, India",Entire Place,505,8,4.5,32.28484,77.17409
+"Candolim, India",Entire Place,546,15,4.89,15.52543,73.78704
+"Brittona, India",Entire Place,754,16,4.67,15.52537,73.84675
+"Zirad, India",Entire Place,773,16,4.650204081632653,18.75593,72.8881
+"Kune N.m., India",Entire Place,579,16,4.650204081632653,18.75698,73.39004
+"Jaipur, India",Entire Place,524,16,4.64,26.92502,75.79783
+"Baga, India",Entire Place,601,14,4.78,15.56983,73.75897
+"Parra, India",Entire Place,545,10,4.57,15.57422,73.77815
+"New Delhi, India",Hotel/Other,541,4,4.650204081632653,28.4439,77.20693
+"Arambol, India",Entire Place,518,16,4.650204081632653,15.64017,73.71949
+"Lonavla, India",Entire Place,523,15,4.56,18.76709,73.41391
+"Bhandar Gaon, India",Entire Place,527,11,4.7,30.40678,78.08064
+"Gurugram, India",Entire Place,574,16,4.57,28.29159,76.93283
+"Anjuna, India",Entire Place,600,13,4.650204081632653,15.59174168,73.76814341
+"Candolim, India",Entire Place,601,4,4.54,15.5166,73.76937
+"Lonavla, India",Entire Place,519,16,5.0,18.73924,73.43787
+"Puducherry, India",Private Room,589,16,4.650204081632653,11.928,79.833
+"Arpora, India",Entire Place,644,14,4.650204081632653,15.57131,73.75704
+"Candolim , India",Entire Place,704,15,5.0,15.50387,73.77057
+"Alibag, India",Hotel/Other,498,12,4.13,18.73712,72.87669
+"Anjuna, India",Entire Place,553,12,4.650204081632653,15.5877,73.765
+"Saligao, India",Entire Place,687,14,4.650204081632653,15.55615,73.78145
+"Calangute, India",Entire Place,661,14,4.650204081632653,15.54714,73.7644
+"Calangute, India",Entire Place,531,16,5.0,15.535,73.768
+"Alappuzha, India",Private Room,515,9,4.650204081632653,9.54289,76.35456
+"Achrol, India",Hotel/Other,722,16,4.650204081632653,27.13538,75.96086
+"Jaipur, India",Hotel/Other,601,16,4.650204081632653,27.04744,75.74732
+"New Delhi, India",Hotel/Other,601,16,4.650204081632653,28.43781,77.18884
+"Panchgani, India",Entire Place,595,16,4.650204081632653,17.93,73.804
+"Udaipur, India",Hotel/Other,495,11,4.650204081632653,24.5971,73.75547
+"Kochi, India",Entire Place,541,6,5.0,9.95954,76.23788
+"Calangute, India",Entire Place,502,16,4.650204081632653,15.535,73.766
+"Pawas, India",Entire Place,601,16,4.650204081632653,16.87067,73.31219
+"Panchgani, India",Entire Place,550,15,4.650204081632653,17.91824,73.80685
+"Baga, India",Entire Place,601,12,4.650204081632653,15.56546,73.7483
+"Mahabaleshwar, India",Entire Place,533,16,4.650204081632653,17.92354,73.66923
+"Jaipur, India",Entire Place,553,12,4.650204081632653,26.92538,75.72046
+"Bijainagar, India",Hotel/Other,722,15,4.650204081632653,25.913,74.591
+"Aamwala, India",Hotel/Other,601,10,4.650204081632653,30.36688,77.9941
+"Nerul, India",Entire Place,601,16,4.650204081632653,15.50773,73.80062
+"Gurugram, India",Hotel/Other,601,16,4.650204081632653,28.35522,77.00456
+"Mararikulam, India",Private Room,541,16,4.650204081632653,9.59906,76.3014
+"Alappuzha, India",Hotel/Other,534,4,4.650204081632653,9.47909,76.38724
+"Alappuzha, India",Hotel/Other,541,2,4.650204081632653,9.46065,76.39451
+"Calangute, India",Entire Place,490,16,4.650204081632653,15.56914,73.75654
+"Chuchot Yakma, India",Private Room,541,10,4.650204081632653,34.08691,77.5807
+"Nashik, India",Private Room,505,16,4.650204081632653,20.07478,73.64144
+"Sangolda, India",Entire Place,655,8,4.650204081632653,15.54225,73.81266
+"Penha de França, India",Entire Place,593,6,4.650204081632653,15.544,73.817
+"Kashid, India",Entire Place,541,14,4.650204081632653,18.4396,72.90539
+"Gadherni, India",Hotel/Other,601,16,4.650204081632653,32.21399,77.18382
+"Lonavla, India",Entire Place,500,9,4.650204081632653,18.77809,73.38887
+"Udaipur, India",Entire Place,577,16,4.650204081632653,24.63226,73.63276
+"Kumdal, India",Hotel/Other,533,16,4.650204081632653,19.70887,73.00706
+"New Delhi, India",Entire Place,601,15,4.650204081632653,28.64295,77.17428
+"Candolim, India",Entire Place,678,16,4.650204081632653,15.529,73.801
+"Varanasi, India",Entire Place,601,6,4.650204081632653,25.30992,82.96668
+"New Delhi, India",Private Room,613,10,4.650204081632653,28.49231,77.21424
+"Kerala, India",Private Room,722,4,4.650204081632653,11.53047,76.15498
+"Dona Paula, India",Entire Place,601,10,4.650204081632653,15.4557,73.79935
+"Zirad, India",Entire Place,528,11,4.67,18.75338,72.9123
+"Almora, India",Private Room,532,4,4.650204081632653,29.70544,79.74828
+"North Goa, India",Entire Place,549,16,4.650204081632653,15.55671,73.78139
+"Waghodia, India",Hotel/Other,533,12,4.650204081632653,22.33,73.534
+"Ahmedabad, India",Entire Place,541,6,4.650204081632653,23.01665,72.37177
+"Udaipur, India",Entire Place,577,16,4.650204081632653,24.57298,73.64834
+"New Delhi, India",Hotel/Other,722,16,4.650204081632653,28.43926,77.18906
+"Coimbatore, India",Entire Place,503,16,4.650204081632653,11.03008,76.93579
+"Raiseena, India",Private Room,541,16,4.650204081632653,28.31868,77.01859
+"Kamshet, India",Entire Place,565,16,4.650204081632653,18.74762,73.54216
+"Baga, India",Entire Place,490,15,3.33,15.55641,73.75528
+"Raigad, India",Entire Place,661,16,4.650204081632653,18.4914,72.90293
+"Jaipur, India",Entire Place,698,16,4.650204081632653,26.905,75.777
+"Mussoorie, India",Entire Place,499,8,4.650204081632653,30.44259,78.20533
+"Chouk, India",Entire Place,558,10,4.650204081632653,18.91733,73.27612
+"Shahpur, India",Entire Place,707,16,4.650204081632653,19.46364,73.37774
+"New Delhi, India",Entire Place,661,15,4.650204081632653,28.58985,77.24795
+"Mahabaleshwar, India",Entire Place,548,15,4.650204081632653,17.92718,73.67217
+"Reis Magos, India",Entire Place,541,12,4.650204081632653,15.507,73.812
+"Kumarakom, India",Entire Place,601,16,4.650204081632653,9.58526,76.42267
+"Aundholi, India",Private Room,567,16,4.650204081632653,18.70868,73.46052
+"Calangute, India",Entire Place,601,15,4.650204081632653,15.53888,73.76503
+"Calangute, India",Entire Place,545,16,4.93,15.533,73.762
+"Bagru, India",Hotel/Other,524,16,4.650204081632653,26.78134,75.52838
+"Narendra Nagar, India",Private Room,706,6,4.650204081632653,30.13509,78.30805
+"Candolim, India",Entire Place,561,16,4.33,15.51971,73.77465
+"Assagaon, India",Entire Place,640,10,4.650204081632653,15.60493,-73.75071
+"Assagao, India",Entire Place,541,13,4.650204081632653,15.602,73.783
+"Kune N.m., India",Entire Place,598,16,4.650204081632653,18.77096,73.37924
+"Vagator, India",Entire Place,661,16,4.650204081632653,15.59441,73.74917
+"Dabolim, India",Entire Place,601,7,2.33,15.37225,73.89023
+"Kasauli, India",Hotel/Other,601,16,4.650204081632653,30.90024,76.96419
+"Tangmarg, India",Private Room,716,10,4.650204081632653,34.03872933,74.40793629
+"Tilase, India",Hotel/Other,661,16,4.650204081632653,19.64953,73.2105
+"Colovale, India",Entire Place,722,8,4.73,15.65007,73.81935
+"Candolim, India",Entire Place,550,14,4.7,15.51608,73.78854
+"Udaipur, India",Entire Place,490,16,4.91,24.54901,73.67723
+"Virajpet, India",Entire Place,601,8,4.42,12.19751,75.8028
+"North Goa, India",Entire Place,541,16,4.57,15.499,73.779
+"Mahabaleshwar, India",Entire Place,723,12,4.650204081632653,17.966,73.663
+"Nashik, India",Entire Place,505,16,4.25,20.01012,73.66948
+"Lonavala, India",Private Room,530,16,4.33,18.75271,73.40711
+"Khandala, India",Entire Place,503,16,4.85,18.75518,73.3726
+"Bengaluru, India",Entire Place,577,15,4.67,12.78803,77.66133
+"Zirad, India",Entire Place,558,16,4.33,18.75464,72.88832
+"Chennai, India",Entire Place,722,10,4.650204081632653,12.86294,80.24809
+"Ernakulam, India",Entire Place,661,8,4.650204081632653,9.89654,76.33206
+"Lonavala, India",Entire Place,612,16,4.650204081632653,18.77183,73.39347
+"Gurugram, India",Entire Place,678,10,4.650204081632653,28.42572,77.03501
+"Calangute, India",Entire Place,577,7,4.73,15.53583,73.77486
+"North Goa, India",Entire Place,549,16,4.84,15.552,73.767
+"New Delhi, India",Entire Place,679,8,4.650204081632653,28.47924,77.15245
+"Alappuzha, India",Entire Place,548,12,4.85,9.54264,76.35528
+"Bardez, India",Entire Place,605,16,4.650204081632653,15.59979,73.73982
+"BARDEZ, India",Entire Place,722,10,4.63,15.52367,73.84667
+"Sangolda, India",Entire Place,722,16,4.67,15.53822,73.81759
+"Lonavala, India",Entire Place,619,16,4.650204081632653,18.75566,73.39192
+"Nerul, India",Entire Place,731,16,4.650204081632653,15.51149,73.78643
+"Aldona, India",Entire Place,722,10,4.9,15.59977,73.87164
+"Chennai, India",Entire Place,515,6,4.94,12.74715,80.24307
+"Nerul, India",Entire Place,495,12,4.31,15.5003,73.79552
+"Garat Pur Bas, India",Hotel/Other,490,16,4.75,28.32043,77.02146
+"Vadanemmeli, India",Entire Place,722,10,4.83,12.74755,80.2436
+"Nerul , India",Entire Place,692,6,5.0,15.50249,73.79117
+"Nerul, India",Entire Place,601,10,5.0,15.50076,73.80018
+"Candolim, India",Entire Place,513,9,4.77,15.51254,73.76794
+"Dona Paula Beach, India",Entire Place,512,12,4.83,15.45413,73.83351
+"Mandrem, India",Entire Place,711,15,3.71,15.66473,73.71201
+"Reis Magos, India",Entire Place,498,14,4.73,15.49681,73.80242
+"Lonavla, India",Entire Place,636,15,4.55,18.76465,73.38206
+"Assagao, India",Entire Place,498,15,4.88,15.59308,73.77637
+"North Goa, India",Entire Place,775,16,4.8,15.535,73.767
+"Alappuzha, India",Hotel/Other,698,6,4.650204081632653,9.4925,76.39202
+"Aryad South, India",Hotel/Other,728,16,4.650204081632653,9.52124,76.35633
+"Candolim, India",Entire Place,722,13,5.0,15.526,73.787
+"Gurgaon, India",Hotel/Other,481,16,4.86,28.37695,77.07406
+"Saligao, India",Entire Place,481,16,4.650204081632653,15.54588,73.78839
+"Gurgaon, India",Hotel/Other,447,14,4.5,28.27546,76.85812
+"Barashiv, India",Private Room,481,16,4.650204081632653,18.49095,72.90269
+"Lonavla, India",Entire Place,447,15,4.25,18.77835,73.38543
+"Vagator, India",Entire Place,477,14,4.88,15.604,73.752
+"Calangute, India",Entire Place,680,16,4.650204081632653,15.53535,73.7681
+"Alibag, India",Entire Place,458,16,4.650204081632653,18.791,72.882
+"Bengaluru, India",Hotel/Other,481,10,3.33,13.13812,77.53386
+"Panchgani, India",Entire Place,474,12,4.75,17.92529,73.76488
+"Goa, India",Entire Place,457,12,4.650204081632653,15.49949,73.7951
+"Candolim, India",Entire Place,480,9,4.36,15.51924,73.76495
+"Chennai, India",Entire Place,442,8,4.650204081632653,12.88,80.24946
+"Assagao, India",Entire Place,457,10,4.75,15.601,73.783
+"Haryana, India",Hotel/Other,447,16,4.650204081632653,28.37241,77.05293
+"Goa, India",Entire Place,480,11,4.650204081632653,15.5421,73.81115
+"Mirik, India",Entire Place,457,14,4.6,26.88462,88.18305
+"Vagator, India",Entire Place,477,7,4.650204081632653,15.5949,73.75217
+"Udaipur, India",Entire Place,421,9,4.650204081632653,24.4972,73.68054
+"North Goa, India",Entire Place,481,16,4.650204081632653,15.55815,73.77549
+"Anjuna, India",Entire Place,468,7,4.88,15.6,73.747
+"Manali, India",Entire Place,448,16,4.650204081632653,32.25024,77.17428
+"Hosur , India",Hotel/Other,459,16,4.650204081632653,12.801,77.829
+"Ashvem Beach, India",Hotel/Other,463,14,4.650204081632653,15.64196,73.71895
+"Anjuna, India",Entire Place,392,9,4.79,15.58744,73.74278
+"Candolim, India",Entire Place,457,10,4.650204081632653,15.51186,73.76857
+"Assagao, India",Entire Place,451,6,4.650204081632653,15.59817,73.7845
+"Rishikesh, India",Entire Place,449,11,4.650204081632653,30.1241,78.30721
+"Manali, India",Private Room,481,12,4.650204081632653,32.24638,77.18152
+"Gurugram, India",Entire Place,421,12,4.54,28.27229,76.85969
+"Mumbai, India",Entire Place,428,4,4.8,19.1303,72.81246
+"Navelim, India",Hotel/Other,722,3,4.84,15.25535,73.9238
+"Kune N.m., India",Entire Place,397,16,3.25,18.76399,73.39248
+"Haleyangadi, India",Entire Place,481,16,4.650204081632653,13.04605,74.78076
+"Mumbai, India",Private Room,481,16,4.650204081632653,19.19027,72.83503
+"Dodamarg Maharashtra, India",Hotel/Other,463,16,4.650204081632653,15.68105,74.05407
+"Rishikesh, India",Hotel/Other,445,16,4.650204081632653,30.10242,78.29796
+"Palampur, India",Entire Place,460,10,4.650204081632653,32.11185,76.53686
+"Kochi, India",Hotel/Other,448,2,4.650204081632653,9.9695,76.24438
+"Alappuzha, India",Hotel/Other,468,15,5.0,9.46028,76.36189
+"Varanasi, India",Hotel/Other,461,2,4.650204081632653,25.30747,83.00868
+"Khingar, India",Entire Place,463,12,4.650204081632653,17.90655,73.82809
+"Udaipur, India",Hotel/Other,481,16,4.650204081632653,24.57761,73.68657
+"Kanthavli, India",Entire Place,481,16,4.650204081632653,18.89997,73.0476
+"Lonavla, India",Entire Place,393,15,4.650204081632653,18.7836,73.45572
+"Penha de França, India",Entire Place,481,10,4.650204081632653,15.55129,73.81805
+"Kodaikanal, India",Entire Place,476,12,4.67,10.26,77.478
+"Candolim, India",Entire Place,416,8,4.94,15.519,73.775
+"Anjuna - Vagator, India",Entire Place,410,7,4.73,15.603,73.752
+"Verla, India",Entire Place,419,12,5.0,15.585,73.793
+"Kothali, India",Private Room,460,10,4.650204081632653,30.22123,79.366
+"Candolim, India",Entire Place,601,10,4.4,15.51255,73.76818
+"Jaipur, India",Entire Place,421,6,4.33,26.82116,75.70489
+"Amritsar, India",Hotel/Other,481,16,5.0,31.693,74.811
+"Mumbai, India",Private Room,481,16,4.650204081632653,19.14991,72.89329
+"Puthenvelikara, India",Entire Place,409,10,4.92,10.18,76.236
+"Ramnagar, India",Hotel/Other,481,12,4.67,29.33,79.049
+"Lonavla, India",Entire Place,429,16,4.650204081632653,18.76402,73.50148
+"Pawna, India",Entire Place,434,16,5.0,18.64502,73.50265
+"Lonavla, India",Entire Place,397,15,4.83,18.74584,73.4121
+"Parra, India",Entire Place,421,12,4.83,15.57267,73.77863
+"Bangalore Urban, India",Entire Place,481,10,5.0,13.18346,77.57569
+"Lonavala, India",Entire Place,419,16,4.67,18.76598,73.38261
+"Gurugram, India",Hotel/Other,481,4,4.650204081632653,28.41086,77.11119
+"Bani Park, India",Hotel/Other,481,16,4.650204081632653,26.925,75.801
+"Agra, India",Private Room,481,4,4.57,27.14421,78.04574
+"Mussoorie, India",Hotel/Other,475,16,5.0,30.45416,78.08309
+"Dehradun, India",Entire Place,481,12,4.650204081632653,30.4101,78.06086
+"Kasauli, India",Entire Place,481,12,4.650204081632653,30.89526,77.01681
+"Bhimtal, India",Private Room,481,6,4.650204081632653,29.35864,79.53659
+"Igatpuri, India",Entire Place,481,10,4.650204081632653,19.69109,73.57564
+"Jaipur, India",Entire Place,478,7,3.33,26.89797,75.79371
+"Panchgani, India",Entire Place,481,16,4.650204081632653,17.91803574,73.81090967
+"Kotagiri, India",Entire Place,471,16,4.650204081632653,11.42827227,76.85974585
+"Bengaluru, India",Entire Place,481,16,5.0,12.86523,77.58067
+"Lonavla, India",Entire Place,479,16,4.650204081632653,18.78225,73.38634
+"Kasauli, India",Entire Place,430,16,4.9,30.88968,76.96528
+"Chennai, India",Entire Place,398,15,4.75,12.88296,80.2506
+"New Delhi, India",Private Room,481,2,4.8,28.56747,77.16195
+"Kihim, India",Entire Place,436,10,4.94,18.73374,72.867
+"Indore, India",Entire Place,430,16,4.650204081632653,22.734,75.943
+"Krishnagiri, India",Private Room,421,16,4.650204081632653,12.80213,77.82934
+"Moira, India",Entire Place,412,10,4.88,15.591,73.841
+"Verla, India",Entire Place,421,16,4.75,15.58594,73.78018
+"Shashbani, India",Entire Place,481,10,4.650204081632653,29.42878,79.67858
+"Alibag, India",Entire Place,481,4,4.650204081632653,18.66683,72.87466
+"Anjuna, India",Entire Place,405,6,4.86,15.583,73.759
+"Sheel, India",Hotel/Other,467,14,4.650204081632653,31.1483,77.69797
+"Ahmedabad, India",Entire Place,481,16,4.62,23.071,72.557
+"New Delhi, India",Entire Place,481,10,4.57,28.45914,77.20017
+"Lonavla, India",Entire Place,433,8,5.0,18.7532,73.3713
+"Assagao, India",Entire Place,426,10,4.8,15.60216,73.78241
+"Nerul, India",Entire Place,407,12,4.650204081632653,15.50139,73.79628
+"Krishnagiri, India",Private Room,421,16,4.33,12.80346,77.82947
+"Anjuna, India",Entire Place,411,7,4.650204081632653,15.60231,73.74936
+"Canacona, India",Entire Place,421,7,5.0,14.96574,74.04822
+"Pune, India",Entire Place,440,16,4.8,18.537,73.895
+"Goa, India",Entire Place,425,16,4.92,15.535,73.767
+"Arpora, India",Entire Place,481,12,4.650204081632653,15.55209,73.75725
+"Pawnanagar, India",Hotel/Other,481,12,4.650204081632653,18.6985033,73.51855949
+"Sadahalli, India",Entire Place,454,12,4.650204081632653,13.20511,77.63614
+"Vashist, India",Entire Place,472,6,4.650204081632653,32.283,77.18
+"Baga, India",Entire Place,481,15,4.650204081632653,15.56485,73.74799
+"Goa, India",Entire Place,473,14,4.650204081632653,15.535,73.767
+"Mandrem, India",Entire Place,445,4,4.650204081632653,15.65609,73.7169
+"Candolim, India",Entire Place,481,10,4.650204081632653,15.51347,73.78744
+"Karjat., India",Hotel/Other,481,16,4.650204081632653,19.72129,73.02592
+"Candolim, India",Entire Place,481,15,4.650204081632653,15.51779,73.76391
+"Hairiya Gaon, India",Entire Place,457,6,4.650204081632653,29.37481,79.5608
+"Dehradun, India",Private Room,421,5,4.0,30.393,78.07247
+"Ooty, India",Entire Place,465,16,4.73,11.41403,76.69173
+"Calangute, India",Hotel/Other,455,3,4.650204081632653,15.53669,73.7588
+"Udaipur, India",Private Room,481,12,4.650204081632653,24.58588,73.71219
+"Bagalur, India",Hotel/Other,421,10,4.650204081632653,12.85945,77.87615
+"Kochi, India",Entire Place,480,6,4.650204081632653,9.96183,76.23963
+"Candolim, India",Entire Place,399,9,5.0,15.527,73.786
+"Kochi, India",Entire Place,480,6,4.650204081632653,9.96072,76.23802
+"Vagator, India",Entire Place,399,10,4.650204081632653,15.59492,73.75086
+"Lucknow, India",Entire Place,397,16,5.0,26.857,81.001
+"Marudanapalli, India",Private Room,409,16,4.650204081632653,12.5419,77.76
+"North Goa, India",Entire Place,475,15,4.650204081632653,15.53261,73.7686
+"Vagator, India",Entire Place,399,12,4.9,15.60502,73.75305
+"Uttarakhand, India",Hotel/Other,412,12,4.5,30.06396,78.5186
+"Lonavala, India",Entire Place,455,16,4.5,18.75567,73.40465
+"Mumbai, India",Entire Place,454,16,4.650204081632653,19.14462,72.79349
+"Alibag, India",Entire Place,469,16,4.650204081632653,18.60635,72.90085
+"Kanathur, India",Entire Place,430,16,4.8,12.849,80.246
+"Mandrem, India",Entire Place,397,12,4.650204081632653,15.67294,73.71444
+"Anjuna, India",Entire Place,411,6,4.650204081632653,15.60369,73.74936
+"Candolim, India",Entire Place,426,16,4.650204081632653,15.52422,73.77366
+"Anjuna, India",Entire Place,411,6,4.67,15.6036,73.7503
+"Pawnanagar, India",Hotel/Other,421,8,4.650204081632653,18.69732,73.51668
+"Udaipur, India",Private Room,421,3,4.650204081632653,24.49149,73.58323
+"Anjuna, India",Entire Place,409,15,4.650204081632653,15.58818,73.75156
+"Lonavala, India",Entire Place,402,16,4.650204081632653,18.73289,73.36982
+"Candolim, India",Entire Place,409,13,4.650204081632653,15.53,73.766
+"Lonavla, India",Entire Place,427,15,4.650204081632653,18.70496,73.44868
+"Chennai, India",Entire Place,409,16,4.75,12.98354,80.26745
+"Kodaikanal, India",Hotel/Other,446,16,4.650204081632653,10.25245,77.47624
+"Anjuna, India",Entire Place,411,6,5.0,15.60411,73.75029
+"Dehradun, India",Entire Place,409,8,4.650204081632653,30.39996,78.06553
+"Mumbai, India",Entire Place,391,16,4.650204081632653,19.14178,72.80502
+"Morve, India",Private Room,421,12,4.650204081632653,18.65139,73.43962
+"Khandala, India",Entire Place,476,16,4.650204081632653,18.779,73.381
+"Kotagiri, India",Entire Place,487,16,4.650204081632653,11.40863588,76.89354926
+"Jaipur, India",Hotel/Other,421,8,4.64,26.89796,75.85622
+"Lonavala, India",Entire Place,481,15,4.650204081632653,18.74761,73.39841
+"Kutta, India",Entire Place,421,16,4.650204081632653,11.96295,76.02185
+"Puducherry, India",Entire Place,481,15,4.650204081632653,11.918,79.82
+"New Delhi, India",Hotel/Other,421,16,4.650204081632653,28.49507,77.13505
+"Chikkamagaluru, India",Private Room,425,16,4.650204081632653,13.35488,75.66652
+"Calangute, India",Entire Place,430,10,4.650204081632653,15.52981,73.76372
+"Diveagar, India",Hotel/Other,421,12,4.650204081632653,18.15195,73.00159
+"Bhilar, India",Entire Place,481,16,4.650204081632653,17.91247,73.76019
+"Maravanthe, India",Private Room,421,3,4.650204081632653,13.72748,74.6406
+"Anjuna, India",Entire Place,399,6,4.650204081632653,15.60248,73.74889
+"Wavarle, India",Entire Place,410,12,4.650204081632653,18.91837,73.27995
+"Mount Abu, India",Entire Place,421,14,4.650204081632653,24.59639,72.71436
+"Candolim, India",Entire Place,421,10,4.650204081632653,15.51391,73.76975
+"Thattekad, India",Entire Place,414,16,4.650204081632653,10.1069,76.70425
+"Candolim, India",Entire Place,421,8,4.650204081632653,15.51987,73.76753
+"Nainital, India",Entire Place,421,12,4.650204081632653,29.38566,79.45323
+"Kanatal, India",Entire Place,463,10,4.66,30.42662,78.32913
+"Sangolda, India",Entire Place,488,10,4.87,15.54542,73.8132
+"Alibag, India",Entire Place,481,10,4.9,18.72961,72.88579
+"Gokarna, India",Entire Place,472,3,4.650204081632653,14.54024,74.33685
+"Candolim, India",Entire Place,474,16,4.67,15.52701,73.76575
+"Anjuna, India",Entire Place,443,12,5.0,15.58452,73.74153
+"Mandrem, India",Entire Place,440,14,4.79,15.672,73.716
+"Satirje, India",Entire Place,464,8,4.7,18.73987,72.89868
+"Gurugram, India",Hotel/Other,472,12,4.71,28.2908,76.93421
+"Reis Magos, India",Entire Place,464,8,4.72,15.49548,73.80428
+"Karjat, India",Entire Place,394,8,4.650204081632653,18.92626,73.32085
+"Haripur, India",Entire Place,433,15,4.650204081632653,32.14635,77.15806
+"Alappuzha, India",Hotel/Other,421,8,4.650204081632653,9.50274,76.35192
+"New Delhi, India",Hotel/Other,469,2,4.650204081632653,28.44201,77.20986
+"Udaipur, India",Private Room,421,3,4.650204081632653,24.5685,73.63485
+"Goa, India",Private Room,439,6,4.650204081632653,15.52667,73.76136
+"Bini, India",Hotel/Other,421,2,4.650204081632653,31.64675,77.34611
+"Jojawar, India",Hotel/Other,409,3,5.0,25.52926,73.75535
+"Udaipur, India",Private Room,421,3,4.650204081632653,24.48927,73.58372
+"Mukhteshwar, India",Private Room,391,2,4.650204081632653,29.46127,79.65691
+"Chaukariya, India",Hotel/Other,394,10,4.650204081632653,24.5219,73.61982
+"Kumarakom, India",Hotel/Other,439,2,4.650204081632653,9.634,76.41762
+"Candolim, India",Entire Place,433,12,4.650204081632653,15.51548,73.77375
+"Jaipur, India",Hotel/Other,421,10,4.650204081632653,26.99922,75.80218
+"Nawanpind Sardaran, India",Hotel/Other,421,12,4.75,31.981,75.399
+"Kodaikanal, India",Private Room,421,16,4.650204081632653,10.24664,77.47499
+"Maravanthe, India",Private Room,421,2,4.650204081632653,13.725,74.63905
+"Lonavla, India",Entire Place,150,10,4.7,18.76322,73.44223
+"Nedumudy, India",Private Room,433,8,4.650204081632653,9.41887,76.40641
+"Udupi, India",Private Room,149,10,4.83,13.37779,74.69766
+"Jaipur, India",Entire Place,132,2,4.93,26.92392,75.80481
+"Penha de França, India",Hotel/Other,130,12,4.71,15.52005,73.81814
+"Jaipur, India",Hotel/Other,131,2,4.76,26.90123,75.82154
+"Vagator, India",Entire Place,150,10,4.94,15.6041,73.75412
+"Candolim, India",Entire Place,148,8,4.68,15.51,73.774
+"Lonavla, India",Entire Place,133,16,3.83,18.77964,73.38772
+"Marsur, India",Hotel/Other,135,12,4.86,12.763,77.69897
+"Lonavala, India",Entire Place,133,16,4.57,18.76309,73.40182
+"Assagao, India",Entire Place,147,7,4.55,15.59958,73.77469
+"Siolim, India",Entire Place,137,10,4.78,15.62359,73.76828
+"Nainital, India",Hotel/Other,153,6,5.0,29.50948,79.63587
+"Varca, India",Entire Place,134,10,4.6,15.22279,73.93695
+"Nainital, India",Entire Place,149,5,4.42,29.45992,79.65339
+"Kodaikanal, India",Entire Place,151,8,4.81,10.26714,77.46693
+"Gurugram, India",Entire Place,132,14,3.85,28.36201,76.95057
+"Goa, India",Entire Place,139,10,4.92,15.51444,73.76619
+"Pravithanam, India",Entire Place,192,16,4.92,9.737,76.735
+"Lonavala, India",Entire Place,193,12,4.36,18.73217,73.40168
+"Gurugram, India",Hotel/Other,196,6,4.74,28.289,76.929
+"Chapora, India",Entire Place,140,4,4.77,15.60545,73.74301
+"Lanja, India",Hotel/Other,192,9,4.650204081632653,16.881,73.468
+"Panchgani, India",Entire Place,190,16,4.91,17.943,73.807
+"Lonavala, India",Entire Place,133,16,4.41,18.7641,73.40108
+"Jaipur, India",Entire Place,192,10,4.650204081632653,26.97969,75.77537
+"Ranga Reddy, India",Entire Place,192,14,5.0,17.29038,78.23217
+"Lonavala, India",Entire Place,194,16,4.66,18.74743,73.42289
+"Nainital, India",Entire Place,132,5,4.43,29.41925,79.55279
+"Colva, India",Entire Place,191,9,3.2,15.27555,73.91895
+"Jaipur, India",Hotel/Other,129,10,4.49,26.93029,75.88596
+"Vagator, India",Entire Place,141,8,4.83,15.59775,73.75629
+"Alto Porvorim, India",Hotel/Other,133,12,5.0,15.51944,73.81883
+"Dhanolti, India",Entire Place,135,4,4.89,30.447,78.196
+"Baga, India",Entire Place,129,6,4.53,15.55843,73.75666
+"Chennai, India",Entire Place,137,10,4.78,12.70712,80.2272
+"Manali, India",Entire Place,153,10,5.0,32.245,77.181
+"Sangolda, India",Entire Place,137,12,4.44,15.54702,73.80199
+"Igatpuri, India",Entire Place,137,16,4.4,19.68254,73.57751
+"Kasauli, India",Entire Place,139,6,4.75,30.902,77.016
+"New Delhi, India",Entire Place,150,10,4.650204081632653,28.52394,77.13948
+"Nalambi, India",Hotel/Other,152,12,4.8,19.22775,73.21889
+"Sughandhagiry, India",Hotel/Other,131,6,3.8,11.58006,75.99667
+"Chalnichhina, India",Hotel/Other,192,6,5.0,29.5547,79.80569
+"Goa, India",Entire Place,196,8,5.0,15.5987,73.75698
+"Munnar, India",Entire Place,154,16,4.53,10.15926,77.17119

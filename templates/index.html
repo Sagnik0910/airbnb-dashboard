@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+        crossorigin=""
+    />
+    <script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+        crossorigin=""
+    ></script>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-main: #0f1117;
+            --bg-card: #181c25;
+            --bg-panel: #181c25;
+            --bg-panel-soft: #1f2430;
+            --border: #2b3140;
+            --text-main: #f5f7fb;
+            --text-soft: #b8c0d4;
+            --text-muted: #8d97ad;
+            --accent: #ff385c;
+            --accent-2: #ff5a5f;
+            --accent-3: #ff7a59;
+            --accent-dark: #e61e4d;
+            --dark-card: #11151d;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.28);
+            --grid: rgba(255, 255, 255, 0.08);
+            --modal-overlay: rgba(0, 0, 0, 0.68);
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #0f1117 0%, #121722 100%);
+            color: var(--text-main);
+        }
+
+        .topbar {
+            background: linear-gradient(135deg, #1f2430, #141923);
+            color: var(--text-main);
+            padding: 24px 28px;
+            border-bottom-left-radius: 28px;
+            border-bottom-right-radius: 28px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .topbar h1 {
+            margin: 0;
+            font-size: 26px;
+            font-weight: 700;
+            letter-spacing: 0.2px;
+            color: #ffffff;
+        }
+
+        .topbar p {
+            margin: 6px 0 0;
+            font-size: 13px;
+            color: var(--text-soft);
+        }
+
+        .topbar-right {
+            display: flex;
+            gap: 12px;
+        }
+
+        .top-btn {
+            border: none;
+            border-radius: 12px;
+            padding: 12px 18px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.25s ease;
+        }
+
+        .top-btn.light {
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: #ffffff;
+            box-shadow: 0 10px 24px rgba(230, 30, 77, 0.28);
+        }
+
+        .top-btn.light:hover {
+            transform: translateY(-1px);
+            opacity: 0.95;
+        }
+
+        .container {
+            padding: 20px 16px 32px;
+        }
+
+        .filters {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .filter-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 14px 16px;
+            color: var(--text-soft);
+            font-size: 15px;
+            box-shadow: var(--shadow);
+            width: 100%;
+        }
+
+        select.filter-box {
+            appearance: none;
+            -webkit-appearance: none;
+            outline: none;
+            cursor: pointer;
+            background-color: var(--bg-card);
+            color: var(--text-main);
+        }
+
+        select.filter-box option {
+            background: #171b24;
+            color: var(--text-main);
+        }
+
+        .load-row {
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        .load-btn {
+            padding: 12px 22px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            box-shadow: 0 10px 24px rgba(255, 56, 92, 0.24);
+            transition: 0.25s ease;
+        }
+
+        .load-btn:hover {
+            transform: translateY(-1px);
+            opacity: 0.96;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+
+        .card {
+            border-radius: 18px;
+            padding: 18px 16px;
+            color: white;
+            min-height: 96px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .card .label {
+            font-size: 14px;
+            opacity: 0.92;
+            margin-bottom: 6px;
+            color: rgba(255,255,255,0.88);
+        }
+
+        .card .value {
+            font-size: 28px;
+            font-weight: 700;
+            word-break: break-word;
+            color: #ffffff;
+        }
+
+        .red1 { background: linear-gradient(135deg, #ff385c, #ff4d6d); }
+        .red2 { background: linear-gradient(135deg, #ff5a5f, #ff7a59); }
+        .rose { background: linear-gradient(135deg, #e61e4d, #b51745); }
+        .pink { background: linear-gradient(135deg, #ff7a59, #ff385c); }
+        .dark { background: linear-gradient(135deg, #232a36, #11151d); }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .panel {
+            background: linear-gradient(180deg, #171b24 0%, #151922 100%);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 16px;
+            box-shadow: var(--shadow);
+            min-height: 320px;
+        }
+
+        .panel h3 {
+            margin: 0 0 12px;
+            font-size: 16px;
+            color: #ffffff;
+            text-align: left;
+        }
+
+        .panel canvas {
+            width: 100% !important;
+            height: 260px !important;
+        }
+
+        .wide {
+            grid-column: span 2;
+        }
+
+        .map-panel {
+            min-height: 430px;
+        }
+
+        #map {
+            width: 100%;
+            height: 350px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .insight-box {
+            height: 260px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            border: 1px dashed #3a4254;
+            border-radius: 14px;
+            color: var(--text-soft);
+            background: #141923;
+            padding: 20px;
+            font-size: 15px;
+            line-height: 1.5;
+        }
+
+        .panel-subtext {
+            margin-top: -4px;
+            margin-bottom: 10px;
+            color: var(--text-muted);
+            font-size: 12px;
+        }
+
+        .insight-modal {
+            position: fixed;
+            inset: 0;
+            background: var(--modal-overlay);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            padding: 20px;
+        }
+
+        .insight-modal-content {
+            width: 100%;
+            max-width: 760px;
+            background: linear-gradient(180deg, #171b24 0%, #11151d 100%);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            padding: 24px;
+            box-shadow: 0 24px 60px rgba(0,0,0,0.45);
+            position: relative;
+            max-height: 85vh;
+            overflow-y: auto;
+        }
+
+        .insight-modal-content h2 {
+            margin: 0 0 14px;
+            color: var(--accent);
+            font-size: 24px;
+        }
+
+        .insight-modal-content p {
+            margin: 0 0 14px;
+            color: var(--text-soft);
+            line-height: 1.6;
+        }
+
+        .insight-list {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .insight-list li {
+            margin-bottom: 12px;
+            line-height: 1.6;
+            color: var(--text-main);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 14px;
+            right: 16px;
+            border: none;
+            background: #202635;
+            color: var(--accent);
+            border-radius: 10px;
+            padding: 8px 12px;
+            font-weight: 700;
+            cursor: pointer;
+            border: 1px solid var(--border);
+        }
+
+        .close-modal:hover {
+            background: #262d3d;
+        }
+
+        @media (max-width: 1200px) {
+            .cards {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .wide {
+                grid-column: span 1;
+            }
+
+            .map-panel {
+                min-height: 360px;
+            }
+
+            #map {
+                height: 280px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .filters {
+                grid-template-columns: 1fr;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .topbar {
+                flex-direction: column;
+                gap: 14px;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* darker popup style */
+        .leaflet-popup-content-wrapper,
+        .leaflet-popup-tip {
+            background: #171b24;
+            color: #f5f7fb;
+            border: 1px solid #2b3140;
+        }
+
+        .leaflet-control-zoom a {
+            background-color: #171b24 !important;
+            color: #f5f7fb !important;
+            border-bottom: 1px solid #2b3140 !important;
+        }
+
+        .leaflet-control-zoom a:hover {
+            background-color: #202635 !important;
+        }
+
+        .leaflet-container {
+            background: #10141d;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="topbar">
+        <div>
+            <h1>Airbnb India Analytics Dashboard</h1>
+            <p>Interactive analysis of listing prices, room types, ratings, and city trends</p>
+        </div>
+        <div class="topbar-right">
+            <button class="top-btn light" onclick="showInsights()">Explore insights</button>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <div class="filters">
+            <select id="cityFilter" class="filter-box">
+                <option value="All">All Cities</option>
+            </select>
+
+            <select id="roomFilter" class="filter-box">
+                <option value="All">All Room Types</option>
+            </select>
+
+            <div class="filter-box">Airbnb India Dashboard</div>
+        </div>
+
+        <div class="load-row">
+            <button class="load-btn" onclick="loadData()">Load Insights</button>
+        </div>
+
+        <div class="cards">
+            <div class="card red1">
+                <div class="label">Average Price</div>
+                <div id="price" class="value">--</div>
+            </div>
+
+            <div class="card red2">
+                <div class="label">Average Rating</div>
+                <div id="rating" class="value">--</div>
+            </div>
+
+            <div class="card rose">
+                <div class="label">Total Listings</div>
+                <div id="listings" class="value">--</div>
+            </div>
+
+            <div class="card pink">
+                <div class="label">Top Segment Avg Price</div>
+                <div id="topCityPrice" class="value">--</div>
+            </div>
+
+            <div class="card dark">
+                <div class="label">Top Room Type</div>
+                <div id="topRoomType" class="value">--</div>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="panel wide map-panel">
+                <h3 id="mapTitle">Listing Locations Map</h3>
+                <div class="panel-subtext" id="mapSubtext">Bubble size reflects price within India</div>
+                <div id="map"></div>
+            </div>
+
+            <div class="panel">
+                <h3 id="chart1Title">Rating Distribution</h3>
+                <div class="panel-subtext" id="chart1Subtext">Useful for highly filtered selections</div>
+                <canvas id="chart1"></canvas>
+            </div>
+
+            <div class="panel">
+                <h3 id="chart2Title">Price Trend Across Filtered Listings</h3>
+                <div class="panel-subtext" id="chart2Subtext">Sequential view of selected listing prices</div>
+                <canvas id="chart2"></canvas>
+            </div>
+
+            <div class="panel wide">
+                <h3 id="bottomTitle">Price vs Rating</h3>
+                <div class="panel-subtext" id="bottomSubtext">Scatter plot of filtered listings</div>
+                <canvas id="bottomChart"></canvas>
+                <div id="bottomFallback" class="insight-box" style="display:none;"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="insightModal" class="insight-modal">
+        <div class="insight-modal-content">
+            <button class="close-modal" onclick="closeInsights()">X</button>
+            <h2>Dashboard Insights</h2>
+            <p id="insightIntro">Here are the key observations from the current filtered data.</p>
+            <ul id="insightList" class="insight-list"></ul>
+        </div>
+    </div>
+
+    <script>
+        Chart.defaults.color = "#b8c0d4";
+        Chart.defaults.borderColor = "rgba(255,255,255,0.08)";
+        Chart.defaults.font.family = "Arial, sans-serif";
+
+        let chart1Instance = null;
+        let chart2Instance = null;
+        let bottomChartInstance = null;
+
+        let map = null;
+        let mapLayerGroup = null;
+        let latestFilteredData = [];
+        let latestCityArr = [];
+        let latestRoomArr = [];
+        let latestRatingBands = {};
+
+        const INDIA_BOUNDS = [
+            [6.0, 68.0],
+            [37.5, 97.5]
+        ];
+
+        const INDIA_CENTER = [22.5937, 78.9629];
+
+        function cleanCityName(city) {
+            if (!city) return "Unknown";
+            return String(city).replace(", India", "").trim();
+        }
+
+        function safeNumber(value) {
+            const num = Number(value);
+            return Number.isFinite(num) ? num : null;
+        }
+
+        function formatCurrency(value) {
+            if (value === null || value === undefined || isNaN(value)) return "--";
+            return "₹" + Math.round(value);
+        }
+
+        function destroyCharts() {
+            if (chart1Instance) {
+                chart1Instance.destroy();
+                chart1Instance = null;
+            }
+            if (chart2Instance) {
+                chart2Instance.destroy();
+                chart2Instance = null;
+            }
+            if (bottomChartInstance) {
+                bottomChartInstance.destroy();
+                bottomChartInstance = null;
+            }
+        }
+
+        function initializeMap() {
+            if (map) {
+                map.remove();
+                map = null;
+            }
+
+            map = L.map("map", {
+                center: INDIA_CENTER,
+                zoom: 4,
+                minZoom: 4,
+                maxZoom: 8,
+                maxBounds: INDIA_BOUNDS,
+                maxBoundsViscosity: 1.0,
+                zoomControl: true
+            });
+
+            L.tileLayer("https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png", {
+                subdomains: "abcd",
+                maxZoom: 19,
+                attribution: "&copy; OpenStreetMap contributors &copy; CARTO"
+            }).addTo(map);
+
+            map.fitBounds(INDIA_BOUNDS);
+            mapLayerGroup = L.layerGroup().addTo(map);
+        }
+
+        function renderMap(data) {
+            initializeMap();
+            mapLayerGroup.clearLayers();
+
+            const points = data
+                .map(item => {
+                    const lat = safeNumber(item.lat ?? item.Lat ?? item.latitude ?? item.Latitude);
+                    const lng = safeNumber(item.lng ?? item.Lng ?? item.longitude ?? item.Longitude ?? item.lon);
+                    const price = safeNumber(item.Price);
+                    const rating = safeNumber(item.Rating);
+                    const city = cleanCityName(item.City);
+                    const roomType = item["Room Type"] || "Unknown";
+                    return { lat, lng, price, rating, city, roomType };
+                })
+                .filter(point =>
+                    point.lat !== null &&
+                    point.lng !== null &&
+                    point.lat >= INDIA_BOUNDS[0][0] &&
+                    point.lat <= INDIA_BOUNDS[1][0] &&
+                    point.lng >= INDIA_BOUNDS[0][1] &&
+                    point.lng <= INDIA_BOUNDS[1][1]
+                );
+
+            if (!points.length) {
+                map.fitBounds(INDIA_BOUNDS);
+                setTimeout(() => map.invalidateSize(), 150);
+                return;
+            }
+
+            points.forEach(point => {
+                const radius = point.price ? Math.max(6, Math.min(24, point.price / 180)) : 8;
+
+                const marker = L.circleMarker([point.lat, point.lng], {
+                    radius: radius,
+                    fillColor: "#ff5a5f",
+                    color: "#ffd6de",
+                    weight: 1.2,
+                    opacity: 1,
+                    fillOpacity: 0.78
+                });
+
+                marker.bindPopup(`
+                    <div style="font-family: Arial, sans-serif; line-height: 1.5;">
+                        <strong>${point.city}</strong><br>
+                        Room Type: ${point.roomType}<br>
+                        Price: ${point.price !== null ? "₹" + point.price : "--"}<br>
+                        Rating: ${point.rating !== null ? point.rating : "--"}
+                    </div>
+                `);
+
+                marker.addTo(mapLayerGroup);
+            });
+
+            map.fitBounds(INDIA_BOUNDS);
+            setTimeout(() => map.invalidateSize(), 150);
+        }
+
+        function populateFilters(data) {
+            const citySet = new Set();
+            const roomSet = new Set();
+
+            data.forEach(item => {
+                citySet.add(cleanCityName(item.City));
+                roomSet.add(item["Room Type"] || "Unknown");
+            });
+
+            const cityFilter = document.getElementById("cityFilter");
+            const roomFilter = document.getElementById("roomFilter");
+
+            cityFilter.innerHTML = '<option value="All">All Cities</option>';
+            roomFilter.innerHTML = '<option value="All">All Room Types</option>';
+
+            [...citySet].sort().forEach(city => {
+                const option = document.createElement("option");
+                option.value = city;
+                option.textContent = city;
+                cityFilter.appendChild(option);
+            });
+
+            [...roomSet].sort().forEach(room => {
+                const option = document.createElement("option");
+                option.value = room;
+                option.textContent = room;
+                roomFilter.appendChild(option);
+            });
+        }
+
+        function getAggregates(filteredData) {
+            const cityMap = {};
+            const roomMap = {};
+            const ratingBands = {
+                "4.5 - 5.0": 0,
+                "4.0 - 4.49": 0,
+                "3.5 - 3.99": 0,
+                "Below 3.5": 0
+            };
+
+            filteredData.forEach(item => {
+                const city = cleanCityName(item.City);
+                const room = item["Room Type"] || "Unknown";
+                const price = safeNumber(item.Price);
+                const rating = safeNumber(item.Rating);
+
+                if (!cityMap[city]) {
+                    cityMap[city] = { count: 0, prices: [], ratings: [] };
+                }
+                cityMap[city].count += 1;
+                if (price !== null) cityMap[city].prices.push(price);
+                if (rating !== null) cityMap[city].ratings.push(rating);
+
+                if (!roomMap[room]) {
+                    roomMap[room] = { count: 0, prices: [], ratings: [] };
+                }
+                roomMap[room].count += 1;
+                if (price !== null) roomMap[room].prices.push(price);
+                if (rating !== null) roomMap[room].ratings.push(rating);
+
+                if (rating !== null) {
+                    if (rating >= 4.5) ratingBands["4.5 - 5.0"] += 1;
+                    else if (rating >= 4.0) ratingBands["4.0 - 4.49"] += 1;
+                    else if (rating >= 3.5) ratingBands["3.5 - 3.99"] += 1;
+                    else ratingBands["Below 3.5"] += 1;
+                }
+            });
+
+            const cityArr = Object.keys(cityMap).map(city => {
+                const prices = cityMap[city].prices;
+                const ratings = cityMap[city].ratings;
+                return {
+                    name: city,
+                    count: cityMap[city].count,
+                    avgPrice: prices.length ? prices.reduce((a, b) => a + b, 0) / prices.length : 0,
+                    avgRating: ratings.length ? ratings.reduce((a, b) => a + b, 0) / ratings.length : 0
+                };
+            });
+
+            const roomArr = Object.keys(roomMap).map(room => {
+                const prices = roomMap[room].prices;
+                const ratings = roomMap[room].ratings;
+                return {
+                    name: room,
+                    count: roomMap[room].count,
+                    avgPrice: prices.length ? prices.reduce((a, b) => a + b, 0) / prices.length : 0,
+                    avgRating: ratings.length ? ratings.reduce((a, b) => a + b, 0) / ratings.length : 0
+                };
+            });
+
+            cityArr.sort((a, b) => b.count - a.count);
+            roomArr.sort((a, b) => b.count - a.count);
+
+            return { cityArr, roomArr, ratingBands };
+        }
+
+        function setCardValues(filteredData, cityArr, roomArr) {
+            const totalListings = filteredData.length;
+
+            const prices = filteredData.map(d => safeNumber(d.Price)).filter(v => v !== null);
+            const ratings = filteredData.map(d => safeNumber(d.Rating)).filter(v => v !== null);
+
+            const avgPrice = prices.length
+                ? (prices.reduce((a, b) => a + b, 0) / prices.length).toFixed(2)
+                : "--";
+
+            const avgRating = ratings.length
+                ? (ratings.reduce((a, b) => a + b, 0) / ratings.length).toFixed(2)
+                : "--";
+
+            document.getElementById("price").innerText = avgPrice;
+            document.getElementById("rating").innerText = avgRating;
+            document.getElementById("listings").innerText = totalListings;
+
+            let topSegmentValue = "--";
+            if (cityArr.length > 1) {
+                const topByPrice = [...cityArr].sort((a, b) => b.avgPrice - a.avgPrice)[0];
+                topSegmentValue = topByPrice ? formatCurrency(topByPrice.avgPrice) : "--";
+            } else if (roomArr.length > 0) {
+                const topRoomByPrice = [...roomArr].sort((a, b) => b.avgPrice - a.avgPrice)[0];
+                topSegmentValue = topRoomByPrice ? formatCurrency(topRoomByPrice.avgPrice) : "--";
+            }
+
+            document.getElementById("topCityPrice").innerText = topSegmentValue;
+            document.getElementById("topRoomType").innerText = roomArr.length ? roomArr[0].name : "--";
+        }
+
+        function createBarChart(canvasId, labels, data, label, color, horizontal = false) {
+            return new Chart(document.getElementById(canvasId), {
+                type: "bar",
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        backgroundColor: color,
+                        borderRadius: 8
+                    }]
+                },
+                options: {
+                    indexAxis: horizontal ? "y" : "x",
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            grid: {
+                                color: "rgba(255,255,255,0.08)"
+                            },
+                            ticks: {
+                                color: "#b8c0d4",
+                                maxRotation: horizontal ? 0 : 35,
+                                minRotation: horizontal ? 0 : 35
+                            }
+                        },
+                        y: {
+                            grid: {
+                                color: "rgba(255,255,255,0.08)"
+                            },
+                            ticks: {
+                                color: "#b8c0d4",
+                                maxRotation: 0,
+                                minRotation: 0
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function createDoughnutChart(canvasId, labels, data) {
+            return new Chart(document.getElementById(canvasId), {
+                type: "doughnut",
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        data: data,
+                        backgroundColor: [
+                            "#ff385c",
+                            "#ff5a5f",
+                            "#ff7a59",
+                            "#596780",
+                            "#d93b63",
+                            "#8a94a8"
+                        ],
+                        borderColor: "#171b24",
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            position: "top",
+                            labels: {
+                                color: "#b8c0d4"
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function createScatterChart(canvasId, data) {
+            return new Chart(document.getElementById(canvasId), {
+                type: "scatter",
+                data: {
+                    datasets: [{
+                        label: "Price vs Rating",
+                        data: data,
+                        backgroundColor: "#ff385c",
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            labels: {
+                                color: "#b8c0d4"
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: "Price",
+                                color: "#b8c0d4"
+                            },
+                            ticks: {
+                                color: "#b8c0d4"
+                            },
+                            grid: {
+                                color: "rgba(255,255,255,0.08)"
+                            }
+                        },
+                        y: {
+                            title: {
+                                display: true,
+                                text: "Rating",
+                                color: "#b8c0d4"
+                            },
+                            ticks: {
+                                color: "#b8c0d4"
+                            },
+                            grid: {
+                                color: "rgba(255,255,255,0.08)"
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function createLineChart(canvasId, labels, data, label, color) {
+            return new Chart(document.getElementById(canvasId), {
+                type: "line",
+                data: {
+                    labels: labels,
+                    datasets: [{
+                        label: label,
+                        data: data,
+                        borderColor: color,
+                        backgroundColor: color,
+                        fill: false,
+                        tension: 0.3,
+                        pointRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                color: "#b8c0d4"
+                            },
+                            grid: {
+                                color: "rgba(255,255,255,0.08)"
+                            }
+                        },
+                        y: {
+                            ticks: {
+                                color: "#b8c0d4"
+                            },
+                            grid: {
+                                color: "rgba(255,255,255,0.08)"
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateAdaptiveCharts(filteredData, cityArr, roomArr, ratingBands) {
+            const chart1Title = document.getElementById("chart1Title");
+            const chart1Subtext = document.getElementById("chart1Subtext");
+            const chart2Title = document.getElementById("chart2Title");
+            const chart2Subtext = document.getElementById("chart2Subtext");
+            const bottomTitle = document.getElementById("bottomTitle");
+            const bottomSubtext = document.getElementById("bottomSubtext");
+            const bottomCanvas = document.getElementById("bottomChart");
+            const bottomFallback = document.getElementById("bottomFallback");
+
+            bottomCanvas.style.display = "block";
+            bottomFallback.style.display = "none";
+
+            const scatterData = filteredData
+                .map(item => {
+                    const price = safeNumber(item.Price);
+                    const rating = safeNumber(item.Rating);
+                    if (price === null || rating === null) return null;
+                    return { x: price, y: rating };
+                })
+                .filter(Boolean);
+
+            if (filteredData.length <= 5) {
+                const ratingLabels = Object.keys(ratingBands);
+                const ratingValues = Object.values(ratingBands);
+
+                chart1Title.innerText = "Rating Distribution";
+                chart1Subtext.innerText = "Useful for highly filtered selections";
+
+                chart2Title.innerText = "Price Trend Across Filtered Listings";
+                chart2Subtext.innerText = "Sequential view of selected listing prices";
+
+                chart1Instance = createBarChart("chart1", ratingLabels, ratingValues, "Listings", "#ff7a59");
+
+                const priceSequence = filteredData.map(item => safeNumber(item.Price)).filter(v => v !== null);
+                const sequenceLabels = priceSequence.map((_, idx) => "L" + (idx + 1));
+
+                chart2Instance = createLineChart("chart2", sequenceLabels, priceSequence, "Price", "#ff385c");
+            } else if (cityArr.length > 1) {
+                const topCitiesByPrice = [...cityArr].sort((a, b) => b.avgPrice - a.avgPrice).slice(0, 10);
+                const topCitiesByCount = [...cityArr].sort((a, b) => b.count - a.count).slice(0, 10);
+
+                chart1Title.innerText = "Average Price by Top Cities";
+                chart1Subtext.innerText = "Only cities with meaningful filtered data are shown";
+
+                chart2Title.innerText = "Listings by Top Cities";
+                chart2Subtext.innerText = "Top cities ranked by number of listings";
+
+                chart1Instance = createBarChart(
+                    "chart1",
+                    topCitiesByPrice.map(x => x.name),
+                    topCitiesByPrice.map(x => Math.round(x.avgPrice)),
+                    "Average Price",
+                    "#ff385c"
+                );
+
+                chart2Instance = createBarChart(
+                    "chart2",
+                    topCitiesByCount.map(x => x.name),
+                    topCitiesByCount.map(x => x.count),
+                    "Listings",
+                    "#e61e4d"
+                );
+            } else if (roomArr.length > 1) {
+                const roomByPrice = [...roomArr].sort((a, b) => b.avgPrice - a.avgPrice);
+                const roomByCount = [...roomArr].sort((a, b) => b.count - a.count);
+
+                chart1Title.innerText = "Average Price by Room Type";
+                chart1Subtext.innerText = "Useful when a single city is selected";
+
+                chart2Title.innerText = "Room Type Distribution";
+                chart2Subtext.innerText = "Filtered room mix for the selected city/segment";
+
+                chart1Instance = createBarChart(
+                    "chart1",
+                    roomByPrice.map(x => x.name),
+                    roomByPrice.map(x => Math.round(x.avgPrice)),
+                    "Average Price",
+                    "#ff5a5f"
+                );
+
+                chart2Instance = createDoughnutChart(
+                    "chart2",
+                    roomByCount.map(x => x.name),
+                    roomByCount.map(x => x.count)
+                );
+            } else {
+                const ratingLabels = Object.keys(ratingBands);
+                const ratingValues = Object.values(ratingBands);
+
+                chart1Title.innerText = "Rating Distribution";
+                chart1Subtext.innerText = "Useful for highly filtered selections";
+
+                chart2Title.innerText = "Price Trend Across Filtered Listings";
+                chart2Subtext.innerText = "Sequential view of selected listing prices";
+
+                chart1Instance = createBarChart("chart1", ratingLabels, ratingValues, "Listings", "#ff7a59");
+
+                const priceSequence = filteredData.map(item => safeNumber(item.Price)).filter(v => v !== null);
+                const sequenceLabels = priceSequence.map((_, idx) => "L" + (idx + 1));
+
+                chart2Instance = createLineChart("chart2", sequenceLabels, priceSequence, "Price", "#ff385c");
+            }
+
+            if (scatterData.length >= 2) {
+                bottomTitle.innerText = "Price vs Rating";
+                bottomSubtext.innerText = "Scatter plot of filtered listings";
+                bottomChartInstance = createScatterChart("bottomChart", scatterData);
+            } else if (roomArr.length > 1) {
+                bottomTitle.innerText = "Average Rating by Room Type";
+                bottomSubtext.innerText = "Comparison stays meaningful even for one city";
+
+                bottomChartInstance = createBarChart(
+                    "bottomChart",
+                    roomArr.map(x => x.name),
+                    roomArr.map(x => Number(x.avgRating.toFixed(2))),
+                    "Average Rating",
+                    "#596780"
+                );
+            } else if (cityArr.length > 1) {
+                bottomTitle.innerText = "Average Rating by City";
+                bottomSubtext.innerText = "City-wise rating comparison";
+
+                const ratingCities = [...cityArr].sort((a, b) => b.avgRating - a.avgRating).slice(0, 10);
+
+                bottomChartInstance = createBarChart(
+                    "bottomChart",
+                    ratingCities.map(x => x.name),
+                    ratingCities.map(x => Number(x.avgRating.toFixed(2))),
+                    "Average Rating",
+                    "#596780"
+                );
+            } else {
+                bottomCanvas.style.display = "none";
+                bottomFallback.style.display = "flex";
+                bottomTitle.innerText = "Filtered Insight";
+                bottomSubtext.innerText = "Very narrow filter selection";
+                bottomFallback.innerHTML = `
+                    <div>
+                        <strong>Only ${filteredData.length} listing${filteredData.length === 1 ? "" : "s"} match this filter.</strong><br>
+                        Comparison charts are limited here, so the dashboard switches to simpler views above.<br>
+                        Try selecting <strong>All Cities</strong> or <strong>All Room Types</strong> for broader comparisons.
+                    </div>
+                `;
+            }
+        }
+
+        function generateInsights(filteredData, cityArr, roomArr, ratingBands) {
+            const insights = [];
+
+            if (!filteredData.length) {
+                insights.push("No listings match the current filter selection.");
+                return insights;
+            }
+
+            const prices = filteredData.map(d => safeNumber(d.Price)).filter(v => v !== null);
+            const ratings = filteredData.map(d => safeNumber(d.Rating)).filter(v => v !== null);
+
+            const avgPrice = prices.length ? prices.reduce((a, b) => a + b, 0) / prices.length : 0;
+            const avgRating = ratings.length ? ratings.reduce((a, b) => a + b, 0) / ratings.length : 0;
+
+            insights.push(`The current selection contains ${filteredData.length} listing${filteredData.length === 1 ? "" : "s"}, with an average price of ₹${Math.round(avgPrice)} and an average rating of ${avgRating.toFixed(2)}.`);
+
+            if (cityArr.length > 0) {
+                const topCityByCount = [...cityArr].sort((a, b) => b.count - a.count)[0];
+                insights.push(`${topCityByCount.name} has the highest presence in the current view with ${topCityByCount.count} listing${topCityByCount.count === 1 ? "" : "s"}.`);
+            }
+
+            if (cityArr.length > 1) {
+                const topCityByPrice = [...cityArr].sort((a, b) => b.avgPrice - a.avgPrice)[0];
+                insights.push(`${topCityByPrice.name} has the highest average price among the visible cities at about ₹${Math.round(topCityByPrice.avgPrice)}.`);
+            }
+
+            if (roomArr.length > 0) {
+                const topRoom = [...roomArr].sort((a, b) => b.count - a.count)[0];
+                insights.push(`${topRoom.name} is the most common room type in the current selection.`);
+            }
+
+            if (roomArr.length > 1) {
+                const expensiveRoom = [...roomArr].sort((a, b) => b.avgPrice - a.avgPrice)[0];
+                insights.push(`${expensiveRoom.name} has the highest average room-type price at roughly ₹${Math.round(expensiveRoom.avgPrice)}.`);
+            }
+
+            const highestBand = Object.entries(ratingBands).sort((a, b) => b[1] - a[1])[0];
+            if (highestBand && highestBand[1] > 0) {
+                insights.push(`Most listings fall in the rating band ${highestBand[0]}.`);
+            }
+
+            if (filteredData.length <= 5) {
+                insights.push("This is a very narrow filtered view, so the dashboard is showing simpler charts for clearer interpretation.");
+            } else {
+                insights.push("This broader filtered selection supports comparative analysis across multiple cities or room types.");
+            }
+
+            return insights;
+        }
+
+        function showInsights() {
+            const modal = document.getElementById("insightModal");
+            const list = document.getElementById("insightList");
+            const intro = document.getElementById("insightIntro");
+
+            list.innerHTML = "";
+
+            const selectedCity = document.getElementById("cityFilter").value;
+            const selectedRoom = document.getElementById("roomFilter").value;
+
+            intro.innerText = `Here are the key observations for City: ${selectedCity} | Room Type: ${selectedRoom}.`;
+
+            const insights = generateInsights(latestFilteredData, latestCityArr, latestRoomArr, latestRatingBands);
+
+            insights.forEach(text => {
+                const li = document.createElement("li");
+                li.textContent = text;
+                list.appendChild(li);
+            });
+
+            modal.style.display = "flex";
+        }
+
+        function closeInsights() {
+            document.getElementById("insightModal").style.display = "none";
+        }
+
+        window.addEventListener("click", function(e) {
+            const modal = document.getElementById("insightModal");
+            if (e.target === modal) {
+                closeInsights();
+            }
+        });
+
+        function loadData() {
+            const loadBtn = document.querySelector(".load-btn");
+            loadBtn.innerText = "Loading...";
+
+            fetch("/api/data")
+                .then(res => res.json())
+                .then(data => {
+                    if (document.getElementById("cityFilter").options.length === 1) {
+                        populateFilters(data);
+                    }
+
+                    const selectedCity = document.getElementById("cityFilter").value;
+                    const selectedRoom = document.getElementById("roomFilter").value;
+
+                    const filteredData = data.filter(item => {
+                        const cityMatch = selectedCity === "All" || cleanCityName(item.City) === selectedCity;
+                        const roomMatch = selectedRoom === "All" || (item["Room Type"] || "Unknown") === selectedRoom;
+                        return cityMatch && roomMatch;
+                    });
+
+                    latestFilteredData = filteredData;
+
+                    destroyCharts();
+                    renderMap(filteredData);
+
+                    const { cityArr, roomArr, ratingBands } = getAggregates(filteredData);
+                    latestCityArr = cityArr;
+                    latestRoomArr = roomArr;
+                    latestRatingBands = ratingBands;
+
+                    setCardValues(filteredData, cityArr, roomArr);
+                    updateAdaptiveCharts(filteredData, cityArr, roomArr, ratingBands);
+
+                    const mapTitle = document.getElementById("mapTitle");
+                    const mapSubtext = document.getElementById("mapSubtext");
+
+                    if (selectedCity === "All" && selectedRoom === "All") {
+                        mapTitle.innerText = "Listing Locations Map";
+                        mapSubtext.innerText = "Bubble size reflects price within India";
+                    } else if (selectedCity !== "All" && selectedRoom === "All") {
+                        mapTitle.innerText = selectedCity + " Listing Map";
+                        mapSubtext.innerText = "Showing filtered listings within India";
+                    } else if (selectedCity === "All" && selectedRoom !== "All") {
+                        mapTitle.innerText = selectedRoom + " Listings Map";
+                        mapSubtext.innerText = "Showing this room type across India";
+                    } else {
+                        mapTitle.innerText = selectedCity + " - " + selectedRoom + " Map";
+                        mapSubtext.innerText = "Map of the current filtered selection within India";
+                    }
+
+                    loadBtn.innerText = "Load Insights";
+                })
+                .catch(error => {
+                    console.error("Error loading dashboard data:", error);
+                    loadBtn.innerText = "Load Insights";
+                });
+        }
+
+        document.getElementById("cityFilter").addEventListener("change", loadData);
+        document.getElementById("roomFilter").addEventListener("change", loadData);
+        window.addEventListener("load", loadData);
+    </script>
+
+</body>
+</html>
